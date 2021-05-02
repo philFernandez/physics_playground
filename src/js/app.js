@@ -12,8 +12,9 @@ var box1;
 var ground;
 
 let boxes = [];
-const worldWidth = document.body.clientWidth;
-const worldHeight = document.body.clientHeight;
+const drawBox = document.getElementById("draw-box");
+const worldWidth = drawBox.clientWidth;
+const worldHeight = drawBox.clientHeight;
 console.log(`width : ${worldWidth}, height: ${worldHeight}`);
 
 const s = (p) => {
@@ -35,7 +36,7 @@ const s = (p) => {
     };
 
     // p.mouseDragged = () => {
-    //     boxes.push(new Box(p.mouseX, p.mouseY, 30, 30));
+    //     boxes.push(new Box(p.mouseX, p.mouseY, 30, 30, p));
     // }
 
     p.draw = () => {
