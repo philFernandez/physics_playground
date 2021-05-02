@@ -24,8 +24,8 @@ console.log(`width : ${worldWidth}, height: ${worldHeight}`);
 const s = (p) => {
     p.setup = () => {
         p.createCanvas(worldWidth, worldHeight);
-        engine = Engine.create({ gravity: { x: 1, y: 1 } });
-        // engine = Engine.create();
+        // engine = Engine.create({ gravity: { x: 0.01, y: 1 } });
+        engine = Engine.create();
         runner = Runner.create();
         world = engine.world;
         goBtn.addEventListener("click", () => {
@@ -36,7 +36,7 @@ const s = (p) => {
         });
         // this physics lib measures rectangles from center out
         // x = 450 would be the center of the rectangle
-        ground = Bodies.rectangle(worldWidth / 2, p.height, p.width, 10, {
+        ground = Bodies.rectangle(worldWidth / 2, p.height, p.width, 100, {
             isStatic: true,
         });
         Composite.add(world, ground);
@@ -56,7 +56,8 @@ const s = (p) => {
         p.rectMode(p.CENTER);
         p.fill("lightblue");
         p.stroke("blue");
-        p.rect(worldWidth / 2, p.height, p.width, 10);
+        // World Ground
+        p.rect(worldWidth / 2, p.height, p.width, 100);
     };
 };
 
