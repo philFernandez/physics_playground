@@ -1,8 +1,9 @@
 class Box {
-    constructor(x, y, w, h) {
+    constructor(x, y, w, h, p) {
         this.body = Bodies.rectangle(x, y, w, h);
         this.w = w;
         this.h = h;
+        this.p = p;
         Composite.add(world, this.body);
     }
 
@@ -10,13 +11,13 @@ class Box {
         let pos = this.body.position;
         let angle = this.body.angle;
 
-        push();
-        translate(pos.x, pos.y);
-        rotate(angle);
-        fill("lightgreen");
-        stroke("green");
-        rectMode(CENTER);
-        rect(0, 0, this.w, this.h);
-        pop();
+        this.p.push();
+        this.p.translate(pos.x, pos.y);
+        this.p.rotate(angle);
+        this.p.fill("lightgreen");
+        this.p.stroke("green");
+        this.p.rectMode(this.p.CENTER);
+        this.p.rect(0, 0, this.w, this.h);
+        this.p.pop();
     }
 }

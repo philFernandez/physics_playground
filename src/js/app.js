@@ -16,31 +16,36 @@ const worldWidth = document.body.clientWidth;
 const worldHeight = document.body.clientHeight;
 console.log(`width : ${worldWidth}, height: ${worldHeight}`);
 
-function setup() {
-    createCanvas(worldWidth, worldHeight);
-    engine = Engine.create();
-    world = engine.world;
-    Runner.run(engine);
-    // this physics lib measures rectangles from center out
-    // x = 450 would be the center of the rectangle
-    ground = Bodies.rectangle(worldWidth / 2, height, width, 10, {
-        isStatic: true,
-    });
-    Composite.add(world, ground);
-}
+const s = (p) => {
+    p.setup = () => {
+        p.createCanvas(worldWidth, worldHeight);
+        engine = Engine.create();
+        world = engine.world;
+        Runner.run(engine);
+        // this physics lib measures rectangles from center out
+        // x = 450 would be the center of the rectangle
+        ground = Bodies.rectangle(worldWidth / 2, p.height, p.width, 10, {
+            isStatic: true,
+        });
+        Composite.add(world, ground);
+    };
 
-function mouseDragged() {
-    boxes.push(new Box(mouseX, mouseY, 30, 30));
-}
-// function mousePressed() {
-//     boxes.push(new Box(mouseX, mouseY, 30, 30));
-// }
+    p.mousePressed = () => {
+        boxes.push(new Box(p.mouseX, p.mouseY, 30, 30, p));
+    };
 
-function draw() {
-    background("lightgray");
-    boxes.forEach((box) => box.show());
-    rectMode(CENTER);
-    fill("lightblue");
-    stroke("blue");
-    rect(worldWidth / 2, height, width, 10);
-}
+    // p.mouseDragged = () => {
+    //     boxes.push(new Box(p.mouseX, p.mouseY, 30, 30));
+    // }
+
+    p.draw = () => {
+        p.background("lightgray");
+        boxes.forEach((box) => box.show());
+        p.rectMode(p.CENTER);
+        p.fill("lightblue");
+        p.stroke("blue");
+        p.rect(worldWidth / 2, p.height, p.width, 10);
+    };
+};
+
+new p5(s, "draw-box");
