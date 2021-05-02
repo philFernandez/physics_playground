@@ -1,0 +1,6 @@
+div#draw-box {
+    margin: auto;
+    width: 75%;
+    height: 99vh;
+    border: 1px solid black;
+}
