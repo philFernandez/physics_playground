@@ -12,6 +12,8 @@ var box1;
 var ground;
 
 let boxes = [];
+const goBtn = document.getElementById("go-time");
+console.log(goBtn);
 const drawBox = document.getElementById("draw-box");
 const worldWidth = drawBox.clientWidth;
 const worldHeight = drawBox.clientHeight;
@@ -22,7 +24,10 @@ const s = (p) => {
         p.createCanvas(worldWidth, worldHeight);
         engine = Engine.create();
         world = engine.world;
-        Runner.run(engine);
+        // Runner.run(engine);
+        goBtn.addEventListener("click", () => {
+            Runner.run(engine);
+        });
         // this physics lib measures rectangles from center out
         // x = 450 would be the center of the rectangle
         ground = Bodies.rectangle(worldWidth / 2, p.height, p.width, 10, {
@@ -31,13 +36,13 @@ const s = (p) => {
         Composite.add(world, ground);
     };
 
-    p.mousePressed = () => {
+    // p.mousePressed = () => {
+    //     boxes.push(new Box(p.mouseX, p.mouseY, 30, 30, p));
+    // };
+
+    p.mouseDragged = () => {
         boxes.push(new Box(p.mouseX, p.mouseY, 30, 30, p));
     };
-
-    // p.mouseDragged = () => {
-    //     boxes.push(new Box(p.mouseX, p.mouseY, 30, 30, p));
-    // }
 
     p.draw = () => {
         p.background("lightgray");
