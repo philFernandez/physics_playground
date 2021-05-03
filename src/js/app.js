@@ -3,7 +3,9 @@ var Engine = Matter.Engine,
     Runner = Matter.Runner,
     Body = Matter.Body,
     Bodies = Matter.Bodies,
-    Composite = Matter.Composite;
+    Composite = Matter.Composite,
+    Mouse = Matter.Mouse,
+    MouseConstraint = Matter.MouseConstraint;
 
 var engine;
 var composite;
@@ -11,6 +13,8 @@ var runner;
 var box1;
 var ground;
 var runner;
+var mouse;
+var mouseConstraint;
 let shapes = [];
 const goBtn = document.getElementById("go-time");
 const stopBtn = document.getElementById("stop-time");
@@ -46,9 +50,20 @@ const s = (p) => {
             }
         );
         Composite.add(world, ground);
+        mouse = Mouse.create(drawBox);
+        mouseConstraint = MouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: {
+                stiffness: 0.2,
+                render: {
+                    visible: false,
+                },
+            },
+        });
+        Composite.add(world, mouseConstraint);
     };
 
-    p.mousePressed = () => {
+    p.doubleClicked = () => {
         shapes.push(
             radios[1].checked
                 ? new Box(
