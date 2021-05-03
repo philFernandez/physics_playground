@@ -12,8 +12,8 @@ class Box {
     }
 
     show() {
-        let pos = this.body.position;
-        let angle = this.body.angle;
+        const pos = this.body.position;
+        const angle = this.body.angle;
 
         this.p5Obj.push();
         this.p5Obj.translate(pos.x, pos.y);
@@ -42,11 +42,9 @@ class Circle {
     }
 
     show() {
-        let pos = this.body.position;
-        let angle = this.body.angle;
+        const pos = this.body.position;
         this.p5Obj.push();
         this.p5Obj.translate(pos.x, pos.y);
-        this.p5Obj.rotate(angle);
         this.p5Obj.fill("lightgreen");
         this.p5Obj.stroke("green");
         this.p5Obj.ellipseMode(this.p5Obj.RADIUS);
