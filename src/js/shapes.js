@@ -8,6 +8,8 @@ class Box {
         this.w = w;
         this.h = h;
         this.p5Obj = p5Obj;
+        this.fill = RandomColor.getColor();
+        this.stroke = RandomColor.getColor();
         Composite.add(world, this.body);
     }
 
@@ -18,8 +20,8 @@ class Box {
         this.p5Obj.push();
         this.p5Obj.translate(pos.x, pos.y);
         this.p5Obj.rotate(angle);
-        this.p5Obj.fill("lightgreen");
-        this.p5Obj.stroke("green");
+        this.p5Obj.fill(this.fill);
+        this.p5Obj.stroke(this.stroke);
         this.p5Obj.rectMode(this.p5Obj.CENTER);
         this.p5Obj.rect(0, 0, this.w, this.h);
         this.p5Obj.pop();
@@ -38,6 +40,8 @@ class Circle {
         this.y = y;
         this.r = r;
         this.p5Obj = p5Obj;
+        this.fill = RandomColor.getColor();
+        this.stroke = RandomColor.getColor();
         Composite.add(world, this.body);
     }
 
@@ -45,8 +49,8 @@ class Circle {
         const pos = this.body.position;
         this.p5Obj.push();
         this.p5Obj.translate(pos.x, pos.y);
-        this.p5Obj.fill("lightgreen");
-        this.p5Obj.stroke("green");
+        this.p5Obj.fill(this.fill);
+        this.p5Obj.stroke(this.stroke);
         this.p5Obj.ellipseMode(this.p5Obj.RADIUS);
         this.p5Obj.circle(0, 0, this.r);
         this.p5Obj.pop();

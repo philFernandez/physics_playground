@@ -11,8 +11,8 @@ var runner;
 var box1;
 var ground;
 var runner;
-
-let boxes = [];
+let box = false;
+let shapes = [];
 const goBtn = document.getElementById("go-time");
 const stopBtn = document.getElementById("stop-time");
 console.log(goBtn);
@@ -20,7 +20,7 @@ const drawBox = document.getElementById("draw-box");
 const worldWidth = drawBox.clientWidth;
 const worldHeight = drawBox.clientHeight;
 const groundHeight = 60;
-console.log(`width : ${worldWidth}, height: ${worldHeight}`);
+// const colors = []
 
 const s = (p) => {
     p.setup = () => {
@@ -50,21 +50,32 @@ const s = (p) => {
     };
 
     p.mousePressed = () => {
-        boxes.push(
-            // new Box(p.mouseX, p.mouseY, p.random(10, 40), p.random(10, 40), p)
-            new Circle(p.mouseX, p.mouseY, 20, p)
+        shapes.push(
+            box
+                ? new Box(
+                      p.mouseX,
+                      p.mouseY,
+                      p.random(10, 40),
+                      p.random(10, 40),
+                      p
+                  )
+                : new Circle(p.mouseX, p.mouseY, p.random(10, 50), p)
         );
     };
 
+    p.mouseWheel = () => {
+        box = !box;
+    };
+
     // p.mouseDragged = () => {
-    //     boxes.push(new Box(p.mouseX, p.mouseY, 30, 30, p));
+    //     shapes.push(new Box(p.mouseX, p.mouseY, 30, 30, p));
     // };
 
     p.draw = () => {
         p.background("white");
-        boxes.forEach((box) => box.show());
+        shapes.forEach((shape) => shape.show());
         p.rectMode(p.CENTER);
-        p.fill("lightblue");
+        p.fill("chartreuse");
         p.stroke("blue");
         // World Ground
         p.rect(worldWidth / 2, p.height, p.width, groundHeight);
