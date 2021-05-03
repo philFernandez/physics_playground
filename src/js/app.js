@@ -11,16 +11,29 @@ var runner;
 var box1;
 var ground;
 var runner;
-let box = false;
 let shapes = [];
 const goBtn = document.getElementById("go-time");
 const stopBtn = document.getElementById("stop-time");
-console.log(goBtn);
 const drawBox = document.getElementById("draw-box");
+const controlBox = document.getElementById("controls");
+controlBox.style = "border: 1px solid black";
 const worldWidth = drawBox.clientWidth;
 const worldHeight = drawBox.clientHeight;
 const groundHeight = 60;
 // const colors = []
+var radio;
+const controlers = (p) => {
+    p.setup = () => {
+        radio = p.createRadio();
+        radio.option(1, "Circle");
+        radio.option(2, "Rectangle");
+        radio.selected(2);
+        radio.style("width", "200px");
+        // const radEl = document.getElementsByTagName("input");
+        const radEl = document.querySelector("input[value='1']");
+        radEl.setAttribute("checked", "");
+    };
+};
 
 const s = (p) => {
     p.setup = () => {
@@ -51,7 +64,7 @@ const s = (p) => {
 
     p.mousePressed = () => {
         shapes.push(
-            box
+            radio.value() === "2"
                 ? new Box(
                       p.mouseX,
                       p.mouseY,
@@ -61,10 +74,6 @@ const s = (p) => {
                   )
                 : new Circle(p.mouseX, p.mouseY, p.random(10, 50), p)
         );
-    };
-
-    p.mouseWheel = () => {
-        box = !box;
     };
 
     // p.mouseDragged = () => {
@@ -83,3 +92,4 @@ const s = (p) => {
 };
 
 new p5(s, "draw-box");
+new p5(controlers, "controls");
