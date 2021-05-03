@@ -19,6 +19,7 @@ console.log(goBtn);
 const drawBox = document.getElementById("draw-box");
 const worldWidth = drawBox.clientWidth;
 const worldHeight = drawBox.clientHeight;
+const groundHeight = 60;
 console.log(`width : ${worldWidth}, height: ${worldHeight}`);
 
 const s = (p) => {
@@ -36,9 +37,15 @@ const s = (p) => {
         });
         // this physics lib measures rectangles from center out
         // x = 450 would be the center of the rectangle
-        ground = Bodies.rectangle(worldWidth / 2, p.height, p.width, 100, {
-            isStatic: true,
-        });
+        ground = Bodies.rectangle(
+            worldWidth / 2,
+            p.height,
+            p.width,
+            groundHeight,
+            {
+                isStatic: true,
+            }
+        );
         Composite.add(world, ground);
     };
 
@@ -57,7 +64,7 @@ const s = (p) => {
         p.fill("lightblue");
         p.stroke("blue");
         // World Ground
-        p.rect(worldWidth / 2, p.height, p.width, 100);
+        p.rect(worldWidth / 2, p.height, p.width, groundHeight);
     };
 };
 
