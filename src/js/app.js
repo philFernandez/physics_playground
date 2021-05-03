@@ -35,8 +35,10 @@ const s = (p) => {
         goBtn.addEventListener("click", () => {
             if (engineActive) {
                 Runner.stop(runner);
+                goBtn.innerHTML = "▶️";
             } else {
                 Runner.run(runner, engine);
+                goBtn.innerHTML = "⏸";
             }
             engineActive = !engineActive;
         });
@@ -84,7 +86,7 @@ const s = (p) => {
     // };
 
     p.draw = () => {
-        p.background("white");
+        p.background("lightblue");
         shapes.forEach((shape) => shape.show());
         p.rectMode(p.CENTER);
         p.fill("chartreuse");

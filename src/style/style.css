@@ -1,12 +1,17 @@
-body {
-    /* padding-top: 5rem; */
+/* body {
     margin: 0;
     padding: 10px;
+} */
+
+label {
+    font-family: comfortaa;
 }
 
 div.container {
     display: flex;
+    column-gap: 1rem;
     /* border: 5px solid red; */
+    justify-content: flex-start;
 }
 
 div#controls {
@@ -16,8 +21,8 @@ div#controls {
 }
 
 div#draw-box {
-    margin: auto;
-    text-align: center;
+    /* margin: auto; */
+    /* text-align: center; */
     width: 60%;
     height: 70vh;
     border: 3px solid black;
