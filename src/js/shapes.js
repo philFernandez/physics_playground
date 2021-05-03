@@ -2,8 +2,8 @@ class Box {
     constructor(x, y, w, h, p5Obj) {
         this.body = Bodies.rectangle(x, y, w, h, {
             friction: 0.4,
-            restitution: 0.7,
-            density: 0.05,
+            restitution: 0.5,
+            density: 0.09,
         });
         this.w = w;
         this.h = h;

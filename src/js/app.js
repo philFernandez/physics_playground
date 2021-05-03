@@ -54,8 +54,8 @@ const s = (p) => {
                 ? new Box(
                       p.mouseX,
                       p.mouseY,
-                      p.random(10, 40),
-                      p.random(10, 40),
+                      p.random(10, 85),
+                      p.random(10, 85),
                       p
                   )
                 : new Circle(p.mouseX, p.mouseY, p.random(10, 50), p)
