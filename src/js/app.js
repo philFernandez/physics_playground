@@ -51,7 +51,8 @@ const s = (p) => {
 
     p.mousePressed = () => {
         boxes.push(
-            new Box(p.mouseX, p.mouseY, p.random(10, 40), p.random(10, 40), p)
+            // new Box(p.mouseX, p.mouseY, p.random(10, 40), p.random(10, 40), p)
+            new Circle(p.mouseX, p.mouseY, 20, p)
         );
     };
 
