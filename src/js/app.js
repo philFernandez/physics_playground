@@ -50,7 +50,9 @@ const s = (p) => {
     };
 
     p.mousePressed = () => {
-        boxes.push(new Box(p.mouseX, p.mouseY, 30, 30, p));
+        boxes.push(
+            new Box(p.mouseX, p.mouseY, p.random(10, 40), p.random(10, 40), p)
+        );
     };
 
     // p.mouseDragged = () => {
@@ -58,7 +60,7 @@ const s = (p) => {
     // };
 
     p.draw = () => {
-        p.background("lightgray");
+        p.background("white");
         boxes.forEach((box) => box.show());
         p.rectMode(p.CENTER);
         p.fill("lightblue");

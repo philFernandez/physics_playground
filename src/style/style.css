@@ -10,11 +10,24 @@ div#draw-box {
     border: 3px solid black;
 }
 
+::selection {
+    background: none;
+}
+
+::-moz-selection {
+    background: none;
+}
+
+::-webkit-selection {
+    background: none;
+}
+
 button {
     font-family: 'comfortaa';
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     border: 2px solid black;
+    text-decoration: none;
 }
 
 div.btn {
