@@ -1,7 +1,18 @@
 body {
     /* padding-top: 5rem; */
     margin: 0;
-    padding: 0;
+    padding: 10px;
+}
+
+div.container {
+    display: flex;
+    /* border: 5px solid red; */
+}
+
+div#controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 div#draw-box {
@@ -24,9 +35,15 @@ div#draw-box {
     background: none;
 }
 
+div.btn-div {
+    margin-top: 3px;
+    border-top: 3px solid black;
+    text-align: center;
+}
+
 button {
     background: none;
-    margin: 0 0.5rem;
+    /* margin: 0 0.5rem; */
     font-size: 3rem;
     border: none;
     text-decoration: none;
@@ -34,10 +51,4 @@ button {
 
 button:hover {
     transform: scale(1.15, 1.15);
-}
-
-div.btn {
-    margin: auto;
-    padding-top: 1rem;
-    text-align: center;
 }
