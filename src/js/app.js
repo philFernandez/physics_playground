@@ -17,13 +17,13 @@ var mouse;
 var mouseConstraint;
 let shapes = [];
 const goBtn = document.getElementById("go-time");
-const stopBtn = document.getElementById("stop-time");
 const drawBox = document.getElementById("draw-box");
 const controlBox = document.getElementById("controls");
 const worldWidth = drawBox.clientWidth;
 const worldHeight = drawBox.clientHeight;
 const groundHeight = 60;
 // const colors = []
+let engineActive = false;
 const radios = document.getElementsByName("shape");
 const s = (p) => {
     p.setup = () => {
@@ -33,10 +33,12 @@ const s = (p) => {
         runner = Runner.create();
         world = engine.world;
         goBtn.addEventListener("click", () => {
-            Runner.run(runner, engine);
-        });
-        stopBtn.addEventListener("click", () => {
-            Runner.stop(runner);
+            if (engineActive) {
+                Runner.stop(runner);
+            } else {
+                Runner.run(runner, engine);
+            }
+            engineActive = !engineActive;
         });
         // this physics lib measures rectangles from center out
         // x = 450 would be the center of the rectangle
