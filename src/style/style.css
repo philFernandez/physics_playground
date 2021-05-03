@@ -23,9 +23,11 @@ div#draw-box {
 }
 
 button {
-    font-family: 'comfortaa';
+    margin: 0 0.5rem;
+    /* font-family: 'comfortaa'; */
+    font-size: 3rem;
     border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
     border: 2px solid black;
     text-decoration: none;
 }
@@ -38,7 +40,7 @@ div.btn {
 
 button#go-time {
     color: aliceblue;
-    background-color: seagreen;
+    background-color: aquamarine;
 }
 
 button#stop-time {
