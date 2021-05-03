@@ -1,8 +1,8 @@
 class Box {
     constructor(x, y, w, h, p5Obj) {
         this.body = Bodies.rectangle(x, y, w, h, {
-            friction: 0.8,
-            restitution: 0.8,
+            friction: 0.4,
+            restitution: 0.7,
             density: 0.05,
         });
         this.w = w;
@@ -31,10 +31,10 @@ class Box {
 class Circle {
     constructor(x, y, r, p5Obj) {
         this.body = Bodies.circle(x, y, r, {
-            friction: 0.0007,
-            frictionAir: 0.001,
+            friction: 0.4,
+            frictionAir: 0.008,
             restitution: 0.8,
-            density: 0.0008,
+            density: 0.05,
         });
         this.x = x;
         this.y = y;
