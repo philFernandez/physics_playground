@@ -22,6 +22,15 @@ const controlBox = document.getElementById("controls");
 const worldWidth = drawBox.clientWidth;
 const worldHeight = drawBox.clientHeight;
 const groundHeight = 60;
+const playSvg = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+<path d="M7 4v16l13 -8z" />
+</svg>`;
+const pauseSvg = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-pause" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+<rect x="6" y="5" width="4" height="14" rx="1" />
+<rect x="14" y="5" width="4" height="14" rx="1" />
+</svg>`;
 // const colors = []
 let engineActive = false;
 const radios = document.getElementsByName("shape");
@@ -35,10 +44,10 @@ const s = (p) => {
         goBtn.addEventListener("click", () => {
             if (engineActive) {
                 Runner.stop(runner);
-                goBtn.innerHTML = "▶️";
+                goBtn.innerHTML = playSvg;
             } else {
                 Runner.run(runner, engine);
-                goBtn.innerHTML = "⏸";
+                goBtn.innerHTML = pauseSvg;
             }
             engineActive = !engineActive;
         });

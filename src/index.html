@@ -10,6 +10,10 @@
     <link rel="stylesheet"
           href="style/style.css"
           media="all">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+          rel="stylesheet">
     <!-- P5 -->
     <script defer
             src="https://cdn.jsdelivr.net/npm/p5@1.3.1"></script>
@@ -42,7 +46,23 @@
                 <label for="Rectangle">Rectangle</label>
             </div>
             <div class="btn-div">
-                <button id="go-time">▶️</button>
+                <button id="go-time">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="icon icon-tabler icon-tabler-player-play"
+                         width="44"
+                         height="44"
+                         viewBox="0 0 24 24"
+                         stroke-width="1.5"
+                         stroke="#00abfb"
+                         fill="none"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path stroke="none"
+                              d="M0 0h24v24H0z"
+                              fill="none" />
+                        <path d="M7 4v16l13 -8z" />
+                    </svg>
+                </button>
             </div>
         </div>
 
@@ -51,8 +71,10 @@
         </div>
 
         <div id="controls-right">
-            <p>We will have controls here</p>
-            <p>Or something...</p>
+            <ul>
+                <li>The boxed off area to the left over here is the playground.</li>
+                <li>In the far left margin we have the controls</li>
+            </ul>
         </div>
 
 
