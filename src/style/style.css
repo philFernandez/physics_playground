@@ -16,8 +16,12 @@ div#controls-right,
 div#controls-left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     justify-self: center;
+}
+
+div#controls-left {
+    justify-content: space-between;
 }
 
 

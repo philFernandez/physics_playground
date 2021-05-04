@@ -14,6 +14,8 @@
           href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
           rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <!-- P5 -->
     <script defer
             src="https://cdn.jsdelivr.net/npm/p5@1.3.1"></script>
@@ -33,36 +35,48 @@
 
         <div id="controls-left">
             <div>
-                <input type="radio"
-                       name="shape"
-                       id="1"
-                       value="Circle"
-                       checked>
-                <label for="Circle">Circle</label>
-                <input type="radio"
-                       name="shape"
-                       id="2"
-                       value="Rectangle">
-                <label for="Rectangle">Rectangle</label>
+                <div>
+                    <input type="radio"
+                           name="shape"
+                           id="1"
+                           value="Circle"
+                           checked>
+                    <label for="Circle">Circle</label>
+                    <input type="radio"
+                           name="shape"
+                           id="2"
+                           value="Rectangle">
+                    <label for="Rectangle">Rectangle</label>
+                </div>
+                <div class="btn-div">
+                    <button id="go-time">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="icon icon-tabler icon-tabler-player-play"
+                             width="44"
+                             height="44"
+                             viewBox="0 0 24 24"
+                             stroke-width="1.5"
+                             stroke="#00abfb"
+                             fill="none"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none" />
+                            <path d="M7 4v16l13 -8z" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="btn-div">
-                <button id="go-time">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="icon icon-tabler icon-tabler-player-play"
-                         width="44"
-                         height="44"
-                         viewBox="0 0 24 24"
-                         stroke-width="1.5"
-                         stroke="#00abfb"
-                         fill="none"
-                         stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path stroke="none"
-                              d="M0 0h24v24H0z"
-                              fill="none" />
-                        <path d="M7 4v16l13 -8z" />
-                    </svg>
-                </button>
+            <div>
+                <p>
+                    Coded with
+                    <span class="material-icons"
+                          style="color: red">
+                        favorite
+                    </span>
+                </p>
+                <span>by Phil Fernandez.</span>
             </div>
         </div>
 
